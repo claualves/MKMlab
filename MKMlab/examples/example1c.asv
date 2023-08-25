@@ -1,0 +1,7 @@
+filename = 'CO_oxidation.mkm';
+T = 600;
+gases = {'CO','O2','CO2'};
+P_i = [0.33 0.67 1];
+[sol rxn_struct] = run_mkm(filename,T,gases,P_i,'TOF_species',{'CO2' 'CO'});
+plot_coverages(sol);
+fprintf('TOF for CO2 is: %g s^(-1)\n',sol.TOF)
